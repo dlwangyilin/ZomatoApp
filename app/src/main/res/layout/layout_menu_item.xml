@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.zomatoapp.viewModel.MenuItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvMenuCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Yellow"
+            android:text="@{viewModel.menuCategory}"
+            tools:text="Salad and Soup">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvMenuName"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.menuName}"
+            tools:text="Asian Caesar Salad">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvMenuDescrip"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.menuDescrip}"
+            tools:text="Crunchy romaine, parmesan, toasted sesame seeds, wonton croutons">
+        </TextView>
+
+    </LinearLayout>
+</layout>

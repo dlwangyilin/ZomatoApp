@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -8,34 +9,42 @@
             type="com.example.zomatoapp.viewModel.HomeViewModel" />
     </data>
 
-
-
-<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
-<!--        -->
-<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".activities.HomeActivity">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:onClick="@{viewModel::onTextClick}"
-            />
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vpFragmentViewPager"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/sflRefreshContainer"
             android:layout_above="@id/tlTabLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nsvScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".activities.HomeActivity">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/vpFragmentViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </RelativeLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tlTabLayout"
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="50dp"/>
+            android:layout_alignParentBottom="true"
+            app:tabIndicatorGravity="top"
+            android:minHeight="50dp" />
     </RelativeLayout>
 </layout>

@@ -1,28 +1,45 @@
 package com.example.zomatoapp.dataModel;
 
+import com.google.gson.annotations.SerializedName;
+
 public class CollectionModel {
-    private String collection_id;
-    private String title;
+    @SerializedName("collection_id")
+    private int collectionId;
+    @SerializedName("res_count")
+    private int resCount;
+    @SerializedName("image_url")
+    private String imageUrl;
+    @SerializedName("url")
     private String url;
+    @SerializedName("title")
+    private String title;
+    @SerializedName("description")
     private String description;
-    private String image_url;
-    private String res_count;
-    private String share_url;
+    @SerializedName("share_url")
+    private String shareUrl;
 
-    public String getCollection_id() {
-        return collection_id;
+    public int getCollectionId() {
+        return collectionId;
     }
 
-    public void setCollection_id(String collection_id) {
-        this.collection_id = collection_id;
+    public void setCollectionId(int collectionId) {
+        this.collectionId = collectionId;
     }
 
-    public String getTitle() {
-        return title;
+    public int getResCount() {
+        return resCount;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setResCount(int resCount) {
+        this.resCount = resCount;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getUrl() {
@@ -33,6 +50,14 @@ public class CollectionModel {
         this.url = url;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -41,27 +66,11 @@ public class CollectionModel {
         this.description = description;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getShareUrl() {
+        return shareUrl;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
-    }
-
-    public String getRes_count() {
-        return res_count;
-    }
-
-    public void setRes_count(String res_count) {
-        this.res_count = res_count;
-    }
-
-    public String getShare_url() {
-        return share_url;
-    }
-
-    public void setShare_url(String share_url) {
-        this.share_url = share_url;
+    public void setShareUrl(String shareUrl) {
+        this.shareUrl = shareUrl;
     }
 }
